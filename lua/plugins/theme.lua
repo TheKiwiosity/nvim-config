@@ -3,8 +3,9 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
+
     require("kanso").setup({
-      transparent = true
+      transparent = not vim.g.neovide
     })
     vim.cmd([[colorscheme kanso]])
   end,

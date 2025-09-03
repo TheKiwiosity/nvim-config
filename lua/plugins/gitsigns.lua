@@ -1,4 +1,8 @@
 return {
   "lewis6991/gitsigns.nvim",
-  opts = {  }
+  priority = 60,
+  config = function()
+    require("gitsigns").setup()
+    require("scrollbar.handlers.gitsigns").setup()
+  end
 }

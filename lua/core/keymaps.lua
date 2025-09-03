@@ -49,14 +49,14 @@ keymap.set("n", "<leader>t[", ":tabp<CR>")     --  go to previous tab
 -- LSP
 keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-keymap.set("n","gr","<cmd>lua vim.lsp.buf.references()<CR>")
-keymap.set("n","gs","<cmd>lua vim.lsp.buf.signature_help()<CR>")
-keymap.set("n","gi","<cmd>lua vim.lsp.buf.implementation()<CR>")
-keymap.set("n","gt","<cmd>lua vim.lsp.buf.type_definition()<CR>")
-keymap.set("n","<leader>rr","<cmd>lua vim.lsp.buf.rename()<CR>")
+keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+keymap.set("n", "<leader>rr", "<cmd>lua vim.lsp.buf.rename()<CR>")
 keymap.set({ "n", "v" }, "<leader>f", ":lua vim.lsp.buf.format()<CR>")
 keymap.set({ "n", "v" }, "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-keymap.set("n","<leader>e","<cmd>lua vim.diagnostic.open_float()<CR>")
+keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 
 -- Lazy
 keymap.set("n", "<leader>L", ":Lazy<CR>")
@@ -71,14 +71,14 @@ keymap.set("n", "<leader>tr", "<cmd>NvimTreeToggle<CR>", { silent = true })
 keymap.set("n", "<leader>cc", "<cmd>CccPick<CR>")
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")       -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")        -- find string in current working directory as you type
-keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>")      -- find string under cursor in current working directory
-keymap.set("n", "<leader>fc", "<cmd>Telescope git_status<cr>")       -- list git status
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")          -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")        -- list available help tags
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")           -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")            -- find string in current working directory as you type
+keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>")          -- find string under cursor in current working directory
+keymap.set("n", "<leader>fc", "<cmd>Telescope git_status<cr>")           -- list git status
+keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")            -- list available help tags
+keymap.set("n", "<leader>fn", "<cmd>Telescope lsp_document_symbols<cr>") -- list document symbols
 
-keymap.set("n", "<leader>ft", "<cmd>Telescope file_browser<CR><cr>") -- telescope file tree
+keymap.set("n", "<leader>ft", "<cmd>Telescope file_browser<CR><cr>")     -- telescope file tree
 
 -- Spectre
 keymap.set('n', '<leader><C-S>', '<cmd>lua require("spectre").toggle()<CR>', {
@@ -118,10 +118,13 @@ keymap.set('i', '<D-x>', function() return vim.fn['codeium#Clear']() end, { expr
 keymap.set('i', '<D-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
 keymap.set('i', '<D-[>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 
+-- Undotree
+keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
+
 -- Goto-preview
-vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})
-vim.keymap.set("n", "gT", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", {noremap=true})
-vim.keymap.set("n", "gI", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", {noremap=true})
-vim.keymap.set("n", "gD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>", {noremap=true})
-vim.keymap.set("n", "gX", "<cmd>lua require('goto-preview').close_all_win()<CR>", {noremap=true})
-vim.keymap.set("n", "gR", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", {noremap=true})
+vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+vim.keymap.set("n", "gT", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", { noremap = true })
+vim.keymap.set("n", "gI", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", { noremap = true })
+vim.keymap.set("n", "gD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>", { noremap = true })
+vim.keymap.set("n", "gX", "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true })
+vim.keymap.set("n", "gR", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", { noremap = true })

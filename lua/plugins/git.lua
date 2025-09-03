@@ -7,6 +7,7 @@ return {
     end
   },
   {
-    "sindrets/diffview.nvim"
+    "sindrets/diffview.nvim",
+    opts = {}
   }
 }

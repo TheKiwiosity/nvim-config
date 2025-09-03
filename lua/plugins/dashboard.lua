@@ -10,7 +10,7 @@ return {
     dashboard.section.header.val = {
       [[ ________    _________    ________    ___      ___ ]],
       [[|\   ____\  |\___   ___\ |\   __  \  |\  \    /  /|]],
-      [[\ \  \___|_ \|___ \  \_| \ \  \|\  \ \ \  \  /  / /]],
+      [[\ \  \___|_ \|___ \  \_| \ \  \_\  \ \ \  \  /  / /]],
       [[ \ \_____  \     \ \  \   \ \   _  _\ \ \  \/  / / ]],
       [[  \|_____\  \     \ \  \   \ \  \\  \  \ \    / /  ]],
       [[   |\________\     \ \__\   \ \__\\ _\  \ \__/ /   ]],
@@ -19,8 +19,11 @@ return {
 
     dashboard.section.buttons.val = {
       dashboard.button( "t", "  Open Tree", ":NvimTreeToggle<CR>"),
-      dashboard.button( "r", "  Recent files", ":Telescope oldfiles<CR>"),
+      dashboard.button( "p", "  Open Project", ":Telescope project<CR>"),
       dashboard.button( "n", "  New file", ":ene <BAR> startinsert<CR>"),
+      dashboard.button( "r", "  Recent files", ":Telescope oldfiles<CR>"),
+      dashboard.button( "f", "  List files", ":Telescope find_files<CR>"),
+      dashboard.button( "<leader>w", "󱝆  Open Windsurf", ":terminal windsurf .<CR>" ),
       dashboard.button( "g", "  Open LazyGit", ":LazyGit<CR>"),
       dashboard.button( "q", "  Quit Neovim", ":q<CR>"),
     }
