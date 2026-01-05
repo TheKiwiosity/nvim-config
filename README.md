@@ -3,7 +3,8 @@
 Neovim configuration written from scratch. 
 Adapting my old config to newer, better practices.
 
-This is the second time I'm remaking the configuration and this one is based on Lazy (after I realized how awesome it it)
+This is the third (or maybe fourth or maybe even fifth) time I'm remaking the configuration and this one is based on Lazy (after I realized how awesome it it). Of course this journey being never-ending I will have to do all of this all over again with a new native plugin manager, but oh well. 
+This time we are using Mason for LSP management, because why the heck not. Also removed a bunch of useless plugins.
 
 ## Requirements
 
