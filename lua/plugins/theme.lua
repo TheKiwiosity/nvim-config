@@ -1,5 +1,41 @@
 return {
-  "KiwiPetal/oxocarbon.nvim",
+  {
+  "rebelot/kanagawa.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+
+    require("kanagawa").setup({
+      transparent = false,
+      background = {
+        dark = "wave",
+        light = "lotus",
+      }
+    })
+    -- vim.cmd([[colorscheme kanagawa]])
+  end,
+  },
+  {
+
+  "webhooked/kanso.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+
+    require("kanso").setup({
+      transparent = not vim.g.neovide,
+      background = {
+        dark = "zen",
+        light = "pearl",
+      }
+    })
+    -- vim.cmd([[colorscheme kanso]])
+  end,
+  },
+
+  {
+
+  "nyoom-engineering/oxocarbon.nvim",
   lazy = false,
   priority = 1000,
   config = function()
@@ -12,4 +48,5 @@ return {
   --   event = foo,
   --   config = bar
   --   end,
+  }
 }

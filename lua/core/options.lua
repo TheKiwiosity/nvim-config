@@ -8,8 +8,8 @@ if vim.g.neovide then
   vim.keymap.set('i', '<D-v>', '<C-R>+') -- Paste insert mode
 
   -- Font adjustment functionality
-  local guifontsize = 14          -- Starting with size 14 as per your current setting
-  local guifont = "Victor\\ Mono" -- Using Victor Mono as per your current setting
+  local guifontsize = 14
+  local guifont = "Victor\\ Mono"
 
   local function AdjustFontSize(amount)
     guifontsize = guifontsize + amount
@@ -18,6 +18,7 @@ if vim.g.neovide then
 
   vim.keymap.set('n', '<C-=>', function() AdjustFontSize(1) end, { noremap = true, silent = true })
   vim.keymap.set('n', '<C-->', function() AdjustFontSize(-1) end, { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-0>', function() guifontsize = 14; vim.o.guifont = guifont .. ":h" .. guifontsize end, { noremap = true, silent = true })
 end
 
 -- disable netrw at the very start of your init.lua
@@ -61,7 +62,7 @@ opt.linebreak = true
 opt.foldenable = true
 opt.foldmethod = "marker"
 -- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- CURSOR
 opt.cursorline = true
 opt.scrolloff = 6
@@ -84,3 +85,7 @@ opt.wildmode = "longest,list"
 -- SPLITS
 opt.splitright = true
 opt.splitbelow = true
+
+-- PERSISTENT UNDO
+opt.undodir = vim.fn.expand("$HOME/.undo")
+opt.undofile = true
