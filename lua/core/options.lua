@@ -62,7 +62,7 @@ opt.linebreak = true
 opt.foldenable = true
 opt.foldmethod = "marker"
 -- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- CURSOR
 opt.cursorline = true
 opt.scrolloff = 6
