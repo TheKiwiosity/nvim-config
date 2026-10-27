@@ -3,6 +3,5 @@ return {
   priority = 60,
   config = function()
     require("gitsigns").setup()
-    require("scrollbar.handlers.gitsigns").setup()
   end
 }
