@@ -12,14 +12,28 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "^4.0.0",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-        keymaps = {
-          visual = "<leader>s"
-        }
+      require("nvim-surround").setup()
+      vim.g.nvim_surround_no_visual_mappings = true
+      vim.keymap.set("x", "<leader>s", "<Plug>(nvim-surround-visual)", {
+          desc = "Add a surrounding pair around a visual selection",
       })
+      vim.keymap.set("x", "<leader>S", "<Plug>(nvim-surround-visual-line)", {
+          desc = "Add a surrounding pair around a visual selection, on new lines",
+      })
+      -- See `:h nvim-surround.keymaps`
+      -- vim.keymap.set("n", "<leader>s", "<Plug>(nvim-surround-normal)", {
+      --     desc = "Add a surrounding pair around a motion (normal mode)",
+      -- })
+      -- vim.keymap.set("n", "<leader>sd", "<Plug>(nvim-surround-delete)", {
+      --     desc = "Delete a surrounding pair",
+      -- })
+      -- vim.keymap.set("n", "<leader>sr", "<Plug>(nvim-surround-change)", {
+      --     desc = "Change a surrounding pair",
+      -- })
+
     end
   },
   {

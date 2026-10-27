@@ -4,6 +4,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     init = function()
+      -- terraform-ls writes its debug log to stderr, which nvim dumps into lsp.log
+      vim.lsp.config("terraformls", {
+        cmd = { "terraform-ls", "serve", "-log-file=/dev/null" },
+      })
       local lsp = require("lspconfig")
       lsp.on_attach = function(client, bufnr)
         client.server_capabilities.semanticTokensProvider = nil
